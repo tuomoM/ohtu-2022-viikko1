@@ -57,7 +57,7 @@ class TestVarasto(unittest.TestCase):
     
     def test_lisaa_negatiivinen(self):
         self.varasto.lisaa_varastoon(10)
-        self.varasto.lisaa_varastoon(10) # -10
+        self.varasto.lisaa_varastoon(-10) # -10
         self.assertAlmostEqual(self.varasto.saldo, 10)
 
     def test_luo_ylitsevuotava(self):
