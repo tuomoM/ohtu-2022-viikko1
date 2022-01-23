@@ -30,10 +30,18 @@ jobs:
           python-version: 3.8
       - name: Install Poetry
         run: pip install poetry
+      - name: install coverage
+        run: pip install coverage
       - name: Install dependencies
         run: poetry install
       - name: Run tests
         run: poetry run coverage run --branch -m pytest
+      - name: set up coverage
+        run: coverage run test.py
+      - name: create coverage report
+        run: coverage xml
+      - name: Coverage report to Codecov
+        uses: codecov/codecov-action@v2
 
 
 
